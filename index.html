@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Photoshoot Creator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #0b0b0b;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: radial-gradient(circle at top, #1a1a1a, #000);
+    }
+
+    header h1 {
+      font-size: 4rem;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #b5b5b5;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 80px 8vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      width: 100%;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      transform: translateY(80px);
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+
+    .card.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.08);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    }
+
+    /* PRICING */
+    .pricing {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .tag{
+        display:inline-block;
+        padding:6px 10px;
+        border-radius:999px;
+        font-size:12px;
+        font-weight:700;
+        background: var(--brand);
+        color:#ffffff;
+        margin-bottom:10px;
+    }
+
+    .price-card {
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      background: linear-gradient(180deg, #111, #0b0b0b);
+      transform: translateY(80px);
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+
+    .price-card.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .price-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 2.5rem;
+      margin: 20px 0;
+    }
+
+    .price span {
+      font-size: 1rem;
+      color: #aaa;
+    }
+
+    .price-card ul {
+      list-style: none;
+      margin: 30px 0;
+      color: #bbb;
+      font-size: 0.95rem;
+    }
+
+    .price-card ul li {
+      margin: 12px 0;
+    }
+
+    .price-card button {
+      padding: 14px 28px;
+      border-radius: 30px;
+      border: none;
+      background: #ffffff;
+      color: #000;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .price-card button:hover {
+      background: #ccc;
+    }
+
+    footer {
+      padding: 40px 8vw;
+      text-align: center;
+      color: #777;
+      border-top: 1px solid #222;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1>Ali Ragab</h1>
+      <p>AI-generated fashion & lifestyle scenes</p>
+    </div>
+  </header>
+
+  <!-- PORTFOLIO -->
+  <section>
+    <div class="gallery">
+        <div class="card">
+          <img src="img/duo-fashion.jpg" alt="AI fashion duo" />
+          <div class="overlay"></div>
+        </div>
+    
+        <div class="card">
+          <img src="img/fire-house.jpg" alt="AI cinematic fire scene" />
+          <div class="overlay"></div>
+        </div>
+    
+        <div class="card">
+          <img src="img/ski.jpg" alt="AI ski action scene" />
+          <div class="overlay"></div>
+        </div>
+
+        <div class="card">
+          <img src="img/dog owner.jpg" alt="dog owner" />
+          <div class="overlay"></div>
+        </div>
+    
+        <div class="card">
+          <img src="img/green duo.jpg" alt="green duo" />
+          <div class="overlay"></div>
+        </div>
+    
+        <div class="card">
+          <img src="img/metro duo.jpg" alt="metro duo" />
+          <div class="overlay"></div>
+        </div>
+        <div class="card">
+          <img src="img/night duo.jpg" alt="night duo" />
+          <div class="overlay"></div>
+        </div>
+    
+        <div class="card">
+          <img src="img/ny man.jpg" alt="ny man" />
+          <div class="overlay"></div>
+        </div>
+    
+        <div class="card">
+          <img src="img/street duo.jpg" alt="street duo" />
+          <div class="overlay"></div>
+        </div>
+    </div>
+  </section>
+
+  <!-- PRICES -->
+  <section>
+    <div class="pricing">
+      <div class="price-card">
+        <h3>starter Pack</h3>
+        <div class="price">349E£ <span>/ shoot</span></div>
+        <p class="">Best for quick social visuals</p>
+        <ul>
+          <li>5 AI-generated images</li>
+          <li>Delivery 24–48h</li>
+        </ul>
+      </div>
+
+      <div class="price-card">
+        <h3>Brand Pack</h3>
+        <div class="price">849E£ <span>/ shoot</span></div>
+        <p class="muted">Best for brands & small campaigns</p>
+        <ul>
+          <li>5 AI-generated images</li>
+          <li>Delivery 48–72h</li>
+        </ul>
+      </div>
+
+      <div class="price-card">
+        <h3>Campaign Pack</h3>
+        <div class="price">1800E£ <span>/ project</span></div>
+        <p class="muted">Best for launches & ads</p>
+        <ul>
+          <li>20+ images</li>
+          <li>Priority delivery</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Ali ragab Portfolio
+  </footer>
+
+  <script>
+    const animated = document.querySelectorAll('.card, .price-card');
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    animated.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
